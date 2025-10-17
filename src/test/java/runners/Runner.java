@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features",
         glue = "StepDefinitions",
         tags = "@kiwi",
-        dryRun = true
+        dryRun = false
 )
 public class Runner {
     //dryrun false ise testi calistiririz, true ise steplerimizi olustururuz.

@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import utilities.ReusableMethods;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -32,18 +33,33 @@ public class KiwiStepDef {
 
     @Given("Continue as a guest butonuna tiklanir")
     public void continue_as_a_guest_butonuna_tiklanir() {
-        page.ContinueButton.click();
+        page.ContinueASGButton.click();
     }
     @When("Acilan sayfalarda {string} ve {string}  tiklanir")
-    public void acilan_sayfalarda_ve_tiklanir(String string, String string2) {
+    public void acilan_sayfalarda_ve_tiklanir(String Continue, String Exploretheapp) throws InterruptedException {
+        Thread.sleep(2500);
+        for (int i = 0; i < 3; i++) {
+            ReusableMethods.scrollWithUiScrollableAndClick(Continue);
+            Thread.sleep(2500);
+        }
+        ReusableMethods.scrollWithUiScrollableAndClick(Exploretheapp);
 
     }
     @When("Acilan sayfalarda Continue ve Explore the app tiklanir")
-    public void acilan_sayfalarda_continue_ve_explore_the_app_tiklanir() {
+    public void acilan_sayfalarda_continue_ve_explore_the_app_tiklanir() throws InterruptedException {
+        Thread.sleep(2500);
+        for (int i = 0; i <4; i++) {
+            ReusableMethods.koordinatTiklamaMethodu(550,2050,400);
+        }
+
 
     }
     @When("Trip type one way olarak secilir")
-    public void trip_type_one_way_olarak_secilir() {
+    public void trip_type_one_way_olarak_secilir() throws InterruptedException {
+        Thread.sleep(2500);
+        page.secimButton.click();
+        Thread.sleep(2500);
+        page.OneWayButton.click();
 
     }
     @When("Kalkıs sehri secenegine tiklanir ve default olan sehir kaldirilir")

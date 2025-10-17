@@ -11,7 +11,16 @@ public class KiwiPage {
         PageFactory.initElements((WebDriver) Driver.getAndroidDriver(),this);
     }
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//*[@text='Continue as a guest']")
+    public WebElement ContinueASGButton;
+
+    @FindBy(xpath = "//*[@text='Continue']")
     public WebElement ContinueButton;
+
+    @FindBy(xpath = "//*[@text='One way']")
+    public WebElement OneWayButton;
+
+    @FindBy(xpath = " (//*[@class='android.view.View'])[5]")
+    public WebElement secimButton;
 
 }

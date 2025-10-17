@@ -2,7 +2,7 @@ Feature: Kullanici ilgili apkyi test eder
   @kiwi
   Scenario: Kullanici ilgili apk'dan bilet alma islemini test eder
     Given Continue as a guest butonuna tiklanir
-    When Acilan sayfalarda "Continue" ve "Explore the app"  tiklanir
+   # When Acilan sayfalarda "Continue" ve "Explore the app"  tiklanir
     When Acilan sayfalarda Continue ve Explore the app tiklanir
     When Trip type one way olarak secilir
     When Kalkıs sehri secenegine tiklanir ve default olan sehir kaldirilir
